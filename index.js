@@ -13,6 +13,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Root route for testing basic server
+app.get('/', (req, res) => {
+  res.send('Welcome to AI Content Assistant API!');
+});
+
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ MongoDB connected'))
